@@ -1693,8 +1693,6 @@ static int afe_apr_send_pkt(void *data, wait_queue_head_t *wait)
 				pr_err_ratelimited("%s: request timedout\n",
 					__func__);
 				ret = -ETIMEDOUT;
-				trace_printk("%s: wait for ADSP response timed out\n",
-					__func__);
 #ifdef AUDIO_FORCE_RESTART_ADSP
 				apr_err_count++;
 				if (apr_err_count >= ADSP_TO_LIMITED_COUNT) {
