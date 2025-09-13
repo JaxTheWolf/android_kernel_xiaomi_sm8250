@@ -273,6 +273,8 @@ struct nuvolta_1665_chg {
 	struct power_supply *wireless_psy;
 	struct regulator *pmic_boost;
 	struct power_supply *nuvo_psy;
+  // pen state
+  struct input_dev *pen_input;
 	// driver parameters
 	u8 epp;
 	u8 epp_tx_id_h;
@@ -307,6 +309,7 @@ struct nuvolta_1665_chg {
 	bool qc_enable;
 	bool reverse_chg_en;
 	bool alarm_flag;
+  bool pen_attached;
 };
 
 struct wls_fw_parameters {

@@ -3204,6 +3204,11 @@ static void nuvolta_1665_fw_state_work(struct work_struct *work)
 	return;
 }
 
+static void nuvolta_report_pen_state(struct nuvolta_1665_chg *chip)
+{
+
+}
+
 static void nu1665_hall3_irq_work(struct work_struct *work)
 {
 	struct nuvolta_1665_chg *chip = container_of(
@@ -3224,7 +3229,7 @@ static void nu1665_hall3_irq_work(struct work_struct *work)
 	} else
 		nuvolta_info(
 			"[hall3] hall4 online, don't disable reverse charge\n");
-
+  nuvolta_report_pen_state(chip);
 	return;
 }
 
@@ -3248,7 +3253,7 @@ static void nu1665_hall4_irq_work(struct work_struct *work)
 	} else
 		nuvolta_info(
 			"[hall4] hall3 online, don't disable reverse charge\n");
-
+  nuvolta_report_pen_state(chip);
 	return;
 }
 

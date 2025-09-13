@@ -1335,6 +1335,8 @@ int dsi_panel_match_fps_pen_setting(struct dsi_panel *panel,
 	int retval = 0;
 	struct dsi_display_mode_priv_info *priv_info;
 
+  pr_info("dsi_panel_match_fps_pen_setting called by %pS\n", __builtin_return_address(0));
+
 	if (!panel || !panel->cur_mode || !panel->cur_mode->priv_info || !adj_mode) {
 		pr_err("invalid params\n");
 		return -EAGAIN;
